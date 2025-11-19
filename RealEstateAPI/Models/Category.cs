@@ -1,0 +1,17 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RealEstateAPI.Models
+{
+    public class Category
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage ="Category name cannot be null or empty.")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage ="Image cannot be null or empty.")]
+        public string ImageUrl { get; set; }
+
+        public ICollection<Property>? properties { get; set; } = new List<Property>();    
+    }   
+}
